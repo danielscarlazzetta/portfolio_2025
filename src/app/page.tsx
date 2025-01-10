@@ -2,6 +2,8 @@ import Image from "next/image";
 import { technologies } from "@/data/technologies";
 import { proyectos } from "@/data/proyects";
 
+import { FaGit, FaLinkedinIn } from "react-icons/fa6";
+
 export default function Home() {
   return (
     <div>
@@ -29,29 +31,11 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="container mx-auto text-center my-10">
-        <div className="avatar">
-          <div className="w-64 rounded-full mx-auto">
-            <Image
-              src="/img/perfil.png"
-              alt="Tu Foto"
-              width={200}
-              height={200}
-            />
-          </div>
-        </div>
-
-        <h1 className="text-3xl font-bold mt-4">Daniel Scarlazzetta</h1>
-        <p className="text-lg text-gray-600 mt-2">
-          información personal, de lo mas general a lo mas especifíco
-        </p>
-      </section>
-
-      <section className=" grid grid-cols-1 md:grid-cols-2 m-12 p-12  ">
-        <div>
+      <section className="grid grid-cols-1 md:grid-cols-2 m-12 p-12  ">
+        <div className="self-center">
           <h1 className="text-3xl font-bold mt-4">Daniel Scarlazzetta</h1>
           <p className="text-lg text-gray-600 mt-2">
-            información personal, de lo mas general a lo mas especifíco
+            Ingeniero informatico, con alta capacidad de resolucion de problemas
           </p>
         </div>
         <div className="avatar">
@@ -66,15 +50,42 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="container mx-auto text-center my-10">
+        <div className="avatar">
+          <div className="w-64 rounded-full mx-auto">
+            <Image
+              src="/img/perfil.png"
+              alt="Tu Foto"
+              width={200}
+              height={200}
+            />
+          </div>
+        </div>
+
+        <h2 className="text-3xl font-bold mt-4">Sobre mí</h2>
+        <p className="text-lg text-gray-600 mt-2">
+          Ingeniero informatico, autodidacta, estudie en centro de formacion
+          tecnica santo tomás, e complementado mis estudios en bootcam de alura
+          latam, cursos de udemy y videos en youtube.
+        </p>
+        <p  className="text-lg text-gray-600 mt-2">Dentro de mi juventud e trabajado en diversos rubros durante mi vida,
+          ya sea como vendendor, cajero, ingeniero fullstac, hasta dechofer
+        </p>
+      </section>
+
       <section className="container mx-auto my-10">
         <h2 className="text-2xl font-bold text-center mb-6">Tecnologías</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {technologies.map((tech) => (
-            <div key={tech.name} className="text-center">
-              <i className={`${tech.icon} text-5xl`}></i>
-              <p className="mt-2">{tech.name}</p>
-            </div>
-          ))}
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+          {technologies.map((tech) => {
+            const IconComponent = tech.icon; // Obtén el componente de ícono
+            return (
+              <div key={tech.name} className="text-center">
+                <IconComponent className="text-5xl mx-auto" />{" "}
+                {/* Renderiza el ícono */}
+                <p className="mt-2">{tech.name}</p>
+              </div>
+            );
+          })}
         </div>
       </section>
 
@@ -104,43 +115,39 @@ export default function Home() {
 
       <section className="container mx-auto my-10">
         <h2 className="text-2xl font-bold text-center mb-6">Contacto</h2>
-        <form className="max-w-lg mx-auto">
-          <div className="form-control mb-4">
-            <label className="label">Nombre</label>
+        <form action="" className="max-w-lg mx-auto">
+          <label className="input input-bordered flex items-center gap-2 mb-4">
+            Name
+            <input type="text" className="grow" placeholder="Daisy" />
+          </label>
+          <label className="input input-bordered flex items-center gap-2 mb-4">
+            Email
+            <input type="text" className="grow" placeholder="daisy@site.com" />
+          </label>
+          <label className="input input-bordered flex items-center gap-2 mb-4">
+            Mensaje
             <input
               type="text"
-              placeholder="Tu nombre"
-              className="input input-bordered"
+              className="grow"
+              placeholder="Escribe acá tu mensaje"
             />
-          </div>
-          <div className="form-control mb-4">
-            <label className="label">Email</label>
-            <input
-              type="email"
-              placeholder="Tu email"
-              className="input input-bordered"
-            />
-          </div>
-          <div className="form-control mb-4">
-            <label className="label">Mensaje</label>
-            <textarea
-              placeholder="Escribe tu mensaje"
-              className="textarea textarea-bordered"
-            ></textarea>
-          </div>
-          <button className="btn btn-primary w-full">Enviar</button>
+          </label>
+          <button className="btn btn-circle bg-purple-800 hover:bg-purple-500 w-full">
+            Enviar
+          </button>
         </form>
       </section>
 
       <footer className="bg-base-200 py-4">
         <div className="container mx-auto text-center">
           <p className="mb-4">Sígueme en:</p>
+
           <div className="flex justify-center space-x-4">
             <a href="https://linkedin.com" target="_blank" rel="noreferrer">
-              <i className="fab fa-linkedin text-2xl"></i>
+              <FaLinkedinIn className="text-2xl" />
             </a>
             <a href="https://github.com" target="_blank" rel="noreferrer">
-              <i className="fab fa-github text-2xl"></i>
+              <FaGit className="text-2xl" />
             </a>
           </div>
         </div>

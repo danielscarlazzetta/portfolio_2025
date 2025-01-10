@@ -1,47 +1,72 @@
+import { BiLogoSpringBoot } from "react-icons/bi";
+import { DiMsqlServer, DiMysql, DiRedis } from "react-icons/di";
+import { FaJava, FaReact } from "react-icons/fa";
+import { FaBootstrap, FaNodeJs } from "react-icons/fa6";
+import { GoStack } from "react-icons/go";
+import { RiBootstrapLine, RiTailwindCssFill } from "react-icons/ri";
+import { SiAngular, SiCss3, SiMongodb, SiNestjs } from "react-icons/si";
+import { TbBrandNextjs } from "react-icons/tb";
+
 export const technologies = [
     {
       name: "Full-Stack",
-      icon: "devicon-react-original", // Clase de icono (puedes usar la que quieras)
+      icon: GoStack, // Clase de icono (puedes usar la que quieras)
     },
     {
       name: "Angular",
-      icon: "devicon-angularjs-plain",
+      icon: SiAngular,
     },
     {
       name: "React",
-      icon: "devicon-react-original",
+      icon: FaReact,
     },
     {
       name: "Next.js",
-      icon: "devicon-nextjs-original",
+      icon: TbBrandNextjs,
     },
     {
       name: "Node.js",
-      icon: "devicon-nodejs-plain",
+      icon: FaNodeJs,
     },
     {
       name: "NestJS",
-      icon: "devicon-nestjs-plain",
+      icon: SiNestjs,
     },
     {
       name: "Java",
-      icon: "devicon-java-plain",
+      icon: FaJava,
     },
     {
       name: "Spring Boot",
-      icon: "devicon-spring-plain",
+      icon: BiLogoSpringBoot,
     },
     {
       name: "CSS",
-      icon: "devicon-css3-plain",
+      icon: SiCss3,
     },
     {
       name: "Tailwind",
-      icon: "devicon-tailwindcss-plain",
+      icon: RiTailwindCssFill,
     },
     {
       name: "Bootstrap",
-      icon: "devicon-bootstrap-plain",
+      icon: FaBootstrap,
+    },
+    {
+      name: "Mysql",
+      icon: DiMysql,
+    },
+    {
+      name: "SQLserver",
+      icon: DiMsqlServer,
+    },
+    {
+      name: "MongoDB",
+      icon: SiMongodb,
+    },
+    {
+      name: "Redis",
+      icon: DiRedis,
     },
   ];
   
